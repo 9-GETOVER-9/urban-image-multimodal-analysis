@@ -1,0 +1,10 @@
+# 基础依赖
+openai>=1.0.0
+python-dotenv>=1.0.0
+
+# 可选：本地微调相关
+# modelscope
+# transformers
+# peft
+# deepspeed
+# torch

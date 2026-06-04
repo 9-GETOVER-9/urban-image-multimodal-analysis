@@ -1,0 +1,50 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# === Environment ===
+.env
+.venv/
+venv/
+env/
+
+# === IDE ===
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# === OS ===
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# === Jupyter ===
+.ipynb_checkpoints/
+
+# === Model weights / large files ===
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# === Logs & outputs ===
+*.log
+output_qwen/
+outputs/
+logs/
+runs/
+
+# === Project data (too large for GitHub, keep only examples/) ===
+data/
+
+# === ModelScope metadata (auto-generated) ===
+*.msc
+.gitattributes
+._____temp/

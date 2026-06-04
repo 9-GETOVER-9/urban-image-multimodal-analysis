@@ -1,0 +1,6 @@
+{"image": "000000000000.png", "device_type": "无人机", "scene_tags": ["小区"], "element_tags": ["消防通道标识"], "raw_response": "{\"device_type\": \"无人机\", \"scene_tags\": [\"小区\"], \"element_tags\": [\"消防通道标识\"]}", "parse_error": null}
+{"image": "000000000001.png", "device_type": "车载摄像头", "scene_tags": ["沿街店铺"], "element_tags": [], "raw_response": "{\"device_type\": \"车载摄像头\", \"scene_tags\": [\"沿街店铺\"], \"element_tags\": []}", "parse_error": null}
+{"image": "000000000002.png", "device_type": "无人机", "scene_tags": ["小区", "沿街店铺"], "element_tags": ["消防通道标识"], "raw_response": "{\"device_type\": \"无人机\", \"scene_tags\": [\"小区\", \"沿街店铺\"], \"element_tags\": [\"消防通道标识\"]}", "parse_error": null}
+{"image": "000000000003.png", "device_type": "车载摄像头", "scene_tags": ["公路"], "element_tags": [], "raw_response": "{\"device_type\": \"车载摄像头\", \"scene_tags\": [\"公路\"], \"element_tags\": []}", "parse_error": null}
+{"image": "000000000004.png", "device_type": "无人机", "scene_tags": ["巷弄"], "element_tags": [], "raw_response": "{\"device_type\": \"无人机\", \"scene_tags\": [\"巷弄\"], \"element_tags\": []}", "parse_error": null}
+{"image": "000000000005.png", "device_type": "车载摄像头", "scene_tags": ["公路"], "element_tags": [], "raw_response": "{\"device_type\": \"车载摄像头\", \"scene_tags\": [\"公路\"], \"element_tags\": []}", "parse_error": null}
