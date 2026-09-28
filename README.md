@@ -1,4 +1,51 @@
-# 🏙️ 城市图像多模态结构化分析
+# 城市图像多模态结构化分析
+
+用通义千问视觉模型把城市街景图片转成可校验的设备、场景和画面要素标签。
+
+**Python · Qwen-VL · 单图推理 · 批量分析 · 离线样例**
+
+## 一句话介绍
+
+一个城市街景图像标注项目：通过提示词、API 调用、结果解析和标签校验完成多任务结构化分析。
+
+## 快速开始
+
+```bash
+git clone https://github.com/9-GETOVER-9/urban-image-multimodal-analysis.git
+cd urban-image-multimodal-analysis
+python -m venv venv
+pip install -r requirements.txt
+python -m src.demo
+```
+
+在线推理还需要设置 `DASHSCOPE_API_KEY`，详细方法见下方说明。
+
+## 功能矩阵
+
+| 能力 | 输出 |
+|---|---|
+| 设备识别 | 车载、固定、无人机或全景云台等类型 |
+| 场景分类 | 公路、路口、沿街店铺等场景标签 |
+| 画面要素 | 停车位、消防通道等关键要素 |
+| 批量推理 | 多张图片的结构化结果 |
+| 离线 Demo | 无 API Key 时体验示例流程 |
+
+## 核心工作流
+
+```text
+输入街景图片 → 构造提示词 → Qwen-VL 推理 → 解析响应 → 校验标签 → 输出结果
+```
+
+## 项目结构
+
+| 路径 | 用途 |
+|---|---|
+| `src/` | 标签、提示词、API 与推理代码 |
+| `examples/` | 样例图片与结果 |
+| `docs/` | 项目方案和模型说明 |
+| `.env.example` | API 配置示例 |
+
+## 详细说明
 
 > 基于通义千问多模态大模型（Qwen-VL）的城市街景图像结构化分析系统
 
