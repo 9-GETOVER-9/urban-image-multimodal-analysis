@@ -1,24 +1,40 @@
-# 城市图像多模态结构化分析
+<div align="center">
 
-用通义千问视觉模型把城市街景图片转成可校验的设备、场景和画面要素标签。
+# 城市街景多模态分析
 
-**Python · Qwen-VL · 单图推理 · 批量分析 · 离线样例**
+**把街景图片转成可解释的结构化标签，连接视觉分析与城市研究。**
+
+`Python` · `Qwen-VL` · `结构化标签` · `本地 Demo`
+
+[![GitHub Stars](https://img.shields.io/github/stars/9-GETOVER-9/urban-image-multimodal-analysis?style=for-the-badge&color=839778)](https://github.com/9-GETOVER-9/urban-image-multimodal-analysis/stargazers)
+[![License: MIT](https://img.shields.io/badge/License-MIT-7A9270?style=for-the-badge)](LICENSE)
+
+[快速开始](#section-2) · [功能矩阵](#section-3) · [🚀 快速开始](#section-8)
+
+</div>
+
+---
+
+<a id="section-1"></a>
 
 ## 一句话介绍
 
 一个城市街景图像标注项目：通过提示词、API 调用、结果解析和标签校验完成多任务结构化分析。
+
+<a id="section-2"></a>
 
 ## 快速开始
 
 ```bash
 git clone https://github.com/9-GETOVER-9/urban-image-multimodal-analysis.git
 cd urban-image-multimodal-analysis
-python -m venv venv
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 python -m src.demo
 ```
 
 在线推理还需要设置 `DASHSCOPE_API_KEY`，详细方法见下方说明。
+
+<a id="section-3"></a>
 
 ## 功能矩阵
 
@@ -30,11 +46,15 @@ python -m src.demo
 | 批量推理 | 多张图片的结构化结果 |
 | 离线 Demo | 无 API Key 时体验示例流程 |
 
+<a id="section-4"></a>
+
 ## 核心工作流
 
 ```text
 输入街景图片 → 构造提示词 → Qwen-VL 推理 → 解析响应 → 校验标签 → 输出结果
 ```
+
+<a id="section-5"></a>
 
 ## 项目结构
 
@@ -45,12 +65,15 @@ python -m src.demo
 | `docs/` | 项目方案和模型说明 |
 | `.env.example` | API 配置示例 |
 
-## 详细说明
+<details>
+<summary>展开配置、维护与详细使用说明</summary>
 
 > 基于通义千问多模态大模型（Qwen-VL）的城市街景图像结构化分析系统
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+<a id="section-6"></a>
 
 ## 📋 项目简介
 
@@ -66,6 +89,8 @@ python -m src.demo
 2. **工程闭环**：从 Prompt 设计 → API 调用 → 结果解析 → 标签校验，形成完整的工程链路
 3. **低门槛运行**：无需 GPU，只需一个 API Key 即可运行；无 API Key 时可运行离线 Demo
 4. **可扩展设计**：标签体系可配置，Prompt 模板可替换，支持批量推理
+
+<a id="section-7"></a>
 
 ## 🏗️ 项目结构
 
@@ -98,6 +123,8 @@ python -m src.demo
 ```
 
 > **数据说明**：完整 CityScapes 原始数据集（约 176MB）不随仓库上传，仅保留 `examples/images/` 中的 6 张小样例用于快速体验。
+
+<a id="section-8"></a>
 
 ## 🚀 快速开始
 
@@ -162,6 +189,8 @@ python -m src.infer --image examples/images/000000000000.png
 python -m src.batch_infer --input-dir examples/images --output examples/results/predictions.jsonl
 ```
 
+<a id="section-9"></a>
+
 ## 🔧 标签体系
 
 | 类别 | 标签选项 | 选择规则 |
@@ -169,6 +198,8 @@ python -m src.batch_infer --input-dir examples/images --output examples/results/
 | 设备类型 | 车载摄像头、固定摄像头、无人机、全景云台 | 单选 |
 | 场景标签 | 工厂、沿街店铺、公路、路口、停车场、小区、巷弄 | 多选 |
 | 画面要素 | 禁停区域、停车位、消防通道标识、垃圾桶 | 多选（可为空） |
+
+<a id="section-10"></a>
 
 ## 💡 技术方案
 
@@ -199,6 +230,8 @@ python -m src.batch_infer --input-dir examples/images --output examples/results/
 - **Seq2Set 策略**：穷举多标签的排列组合，避免标签依赖固化
 - **LoRA 微调**：单卡 4090 即可完成微调
 
+<a id="section-11"></a>
+
 ## 📊 效果展示
 
 | 图片 | 设备类型 | 场景标签 | 画面要素 |
@@ -209,6 +242,8 @@ python -m src.batch_infer --input-dir examples/images --output examples/results/
 | 000000000004.png | 无人机 | 巷弄 | - |
 
 > 以上为离线样例输出，可通过 `python -m src.demo` 查看完整展示。
+
+<a id="section-12"></a>
 
 ## 🎓 面试讲解口径
 
@@ -233,17 +268,25 @@ python -m src.batch_infer --input-dir examples/images --output examples/results/
 2. **结果解析**：处理模型输出的非标准 JSON（如 markdown 包裹、多余文本）
 3. **标签校验**：确保输出标签在合法范围内
 
+<a id="section-13"></a>
+
 ## 📚 相关文档
 
 - [项目方案文档](docs/proposal.md)：详细的任务定义、数据准备、标注流程、技术方案
 - [Qwen-VL 微调指南](docs/qwen-vlm.md)：模型架构、训练流程、LoRA 微调实践
 
+<a id="section-14"></a>
+
 ## 📄 License
 
 本项目采用 [MIT License](LICENSE) 开源协议。
+
+<a id="section-15"></a>
 
 ## 🙏 致谢
 
 - [通义千问](https://qianwen.aliyun.com/)：提供多模态大模型 API
 - [CityScapes](https://www.cityscapes-dataset.com/)：提供城市街景数据集
 - [Qwen-VL](https://github.com/QwenLM/Qwen-VL)：开源多模态大模型
+
+</details>
